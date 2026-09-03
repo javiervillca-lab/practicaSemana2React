@@ -1,0 +1,13 @@
+services:
+  react-dev:
+    container_name: practica-semana2-react-dev
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    ports:
+      - "4400:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev -- --host 0.0.0.0

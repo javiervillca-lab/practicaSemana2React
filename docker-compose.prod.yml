@@ -1,0 +1,9 @@
+services:
+  react-web:
+    container_name: practica-semana2-react-web
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "4300:80"
+    restart: unless-stopped
