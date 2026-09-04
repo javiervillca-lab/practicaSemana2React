@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ViewProducts from './Product/ViewProducts';
 
 export default function Dashboard() {
     const [seccionActiva, setSeccionActiva] = useState('productos');
@@ -25,11 +26,11 @@ export default function Dashboard() {
                             INICIO
                         </button>
                         <button
-
+                            onClick={() => setSeccionActiva('productos')}
                             className={`w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-colors flex items-center gap-3 ${seccionActiva === 'productos' ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:bg-slate-800 hover:text-white'
                                 }`}
                         >
-                            📦 Productos
+                            📦 productos
                         </button>
 
                         <button
@@ -70,7 +71,7 @@ export default function Dashboard() {
 
                 {/* RENDER CONDICIONAL DE LAS VISTAS */}
                 <main className="flex-1 overflow-x-hidden overflow-y-auto p-8">
-
+                    {seccionActiva === 'productos' && <ViewProducts />}
                 </main>
                 <footer className="bg-white border-t border-gray-200 shadow-xs">
                     <div className="w-full p-4">
